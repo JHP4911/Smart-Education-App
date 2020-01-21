@@ -1,0 +1,298 @@
+
+<MainWindow>:
+
+    GridLayout:
+        cols:1
+        canvas.before:
+            Color:
+                rgba: (1,1,1,.8)
+            Rectangle:
+                source : 'download.jpg'
+                size: self.size
+                pos: self.pos
+
+
+        rows:2
+        Label:
+            text: "Mathematics"
+            font_size: 40
+        GridLayout:
+            rows: 5
+
+            Button:
+                text: "Lesson1-Story"
+                background_color: (0.06, .36, .4, .775)
+                on_release:root.change()
+
+            Button:
+                text: "Lesson2-Counting"
+                background_color: (0.06, .36, .4, .775)
+                on_release:root.change1()
+
+            Button:
+                text: "Lesson3-Addition"
+                background_color: (0.06, .36, .4, .775)
+                on_release:root.change2()
+
+
+            Button:
+                text: "Lesson4-Subtraction"
+                background_color: (0.06, .36, .4, .775)
+                on_release:root.change3()
+
+            Button:
+                text: "Lesson5-Shapes"
+                background_color: (0.06, .36, .4, .775)
+                on_release:root.change4()
+
+            Button:
+                text: "back"
+                background_color: (0.06, .36, .4, .775)
+
+
+
+<SecondWindow>:
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'donkey.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk1()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:root.change()
+
+
+
+
+
+
+<ThirdWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'count.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .375)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk2()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:root.change()
+
+
+
+
+<FourthWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'addition.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk3()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+        on_release:root.change()
+
+
+
+
+<FifthWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'subtraction.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk4()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .675)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:root.change()
+
+
+
+<ShapeWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'shape.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Start"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+        on_release:root.change()
+
+    Button:
+        text: "Go Back"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:root.change1()
+
+
+<CircleWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'circle.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_shp()
+        on_release:root.change()
+
+<RectangleWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'rectangle.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_shp()
+        on_release:root.change()
+
+<SquareWindow>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'square.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .475)
+        pos: (258,350)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Next"
+        background_color: (0.06, .36, .4, .475)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_shp()
+        on_release:root.change()
+
+<TriangleWindow>:
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source : 'triangle.jpg'
+            size: self.size
+            pos: self.pos
+    Button:
+        text: "Play"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,250)
+        size_hint: .4,.125
+        font_size: 40
+        on_press: root.btn_clk()
+
+    Button:
+        text: "Back"
+        background_color: (0.06, .36, .4, .575)
+        pos: (258,20)
+        size_hint: .4,.125
+        font_size: 40
+
+        on_release:root.change()

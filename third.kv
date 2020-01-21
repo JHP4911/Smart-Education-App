@@ -1,0 +1,334 @@
+
+<MainWindow>:
+    GridLayout:
+        cols:1
+        canvas.before:
+            Color:
+                rgba: (1,1,1,.8)
+            Rectangle:
+                source : 'mathmodule.jpg'
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Math Module Test"
+            font_size: 40
+
+
+        Button:
+            text: "Start"
+            size_hint: .7,.145
+            background_color: (0.06, .36, .4, .375)
+            font_size:40
+            on_release:root.change()
+
+
+        Button:
+            text: "Back"
+
+            size_hint: .7,.145
+            background_color: (0.06, .36, .4, .375)
+            font_size:40
+
+<mtq1Window>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'back.jpg'
+            size: self.size
+            pos: self.pos
+    GridLayout:
+
+
+        rows:2
+        Label:
+            text: "Q1) Find sum of 3+2 ?"
+            font_size: 40
+
+
+
+
+        GridLayout:
+            cols:1
+
+
+
+
+
+            Button:
+                text: "a) 4"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+
+
+                on_press: root.change1()
+
+
+            Button:
+                text: "b) 9"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "c) 5"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change()
+
+            Button:
+                text: "d) 3"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+
+<mtq2Window>:
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'back.jpg'
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        rows:2
+        Label:
+            text: "Q2) Find difference of 3-2 ?"
+            font_size: 40
+
+
+
+        GridLayout:
+            cols:1
+
+
+
+
+            Button:
+                text: "a) 1"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change()
+
+            Button:
+                text: "b) 5"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "c) -1"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "d) 0"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+<mtq3Window>:
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'back.jpg'
+            size: self.size
+            pos: self.pos
+    GridLayout:
+        rows:2
+        Label:
+            text: "Q3) Find difference of 2-3 ?"
+            font_size: 40
+
+
+
+
+        GridLayout:
+            cols:1
+
+
+
+
+            Button:
+                text: "a) 1"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "b) -1"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change()
+
+            Button:
+                text: "c) 0"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "d) 1"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+
+<mtq4Window>:
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'back.jpg'
+            size: self.size
+            pos: self.pos
+    GridLayout:
+        rows:2
+        Label:
+            text: "Q4) What come after 10 ?"
+            font_size: 40
+
+
+        GridLayout:
+            cols:1
+
+
+
+            Button:
+                text: "a) 12"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "b) 9"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "c) 15"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "d) 11"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change()
+
+<mtq5Window>:
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'back.jpg'
+            size: self.size
+            pos: self.pos
+    GridLayout:
+        rows:2
+        Label:
+            text: "Q5) What come before 10 ?"
+            font_size: 40
+
+
+        GridLayout:
+            cols:1
+
+
+
+
+
+            Button:
+                text: "a) 8"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "b) 11"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+            Button:
+                text: "c) 9"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change()
+
+            Button:
+                text: "d) 12"
+                pos: (220,50)
+                size_hint: .5,.145
+                background_color: (0.06, .36, .4, .675)
+                font_size:40
+                on_press: root.change1()
+
+<finishWindow>:
+
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1,.8)
+        Rectangle:
+            source : 'finish.jpg'
+            size: self.size
+            pos: self.pos
+
+
+    Button:
+        text: "Finish"
+        pos: (220,50)
+        size_hint: .5,.145
+        background_color: (0.06, .36, .4, .675)
+        font_size: 40
+        on_release:on_release:root.change()
+
+
+

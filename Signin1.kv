@@ -1,0 +1,1294 @@
+<MainWindow>:
+    id: main_win
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+
+
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source:'work.jpg'
+            size: root.width-400,root.height
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .5, .5, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "SMART TEACHER APP"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: main_win.space_x, 10
+        #spacing: 20
+        Label:
+            id: sp21
+
+        Button:
+            text: "Login"
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.li()
+
+
+        Label:
+            id: sp2
+            spacing:10
+
+        Button:
+            text :"Sign In"
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.si()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"EXIT"
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_press:app.stop()
+<SigninWindow>:
+    id : logged
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    name:name
+    email:email
+    pwd:pwd
+    school:school
+    idd:idd
+    spz:spz
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "SIGN IN"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: logged.space_x, 5
+        #spacing: 20
+        TextInput:
+            id: name
+            hint_text: "Full Name"
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: email
+            hint_text: "EMail ID"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.9}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: pwd
+            hint_text: "Password"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.7}
+            multiline: False
+            password:True
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: school
+            hint_text: "School Name"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.5}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: idd
+            hint_text: "ID-Number"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            multiline: False
+
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+        Button:
+            text: "Continue"
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45, 1)
+            background_normal: ''
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            on_release:root.register()
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+        Button:
+            text: "GO BACK"
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45, 1)
+            background_normal: ''
+            on_release:root.changescreen()
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+        Label:
+            id: spz
+            size_hint_y:None
+            height:50
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+
+<Login>:
+    id: roll
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    emaill:emaill
+    pwdl:pwdl
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source:'work.jpg'
+            size: root.width-400,root.height
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "LOG IN"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: roll.space_x, 10
+        #spacing: 20
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 1
+            size_hint_y: None
+            height: 100
+            Label:
+                id:ws
+            Label:
+                id:ws1
+
+            TextInput:
+                id: emaill
+                hint_text: "EMail ID"
+                size_hint_y:None
+                height:40
+                focus:True
+                multiline: False
+                pos_hint:{'center_x': 1.25, 'center_y': 0}
+            Label:
+                id: info
+                text: ''
+                markup: True
+                size_hint_y: None
+                height: 20
+            TextInput:
+                id: pwdl
+                hint_text: "Password"
+                size_hint_y:None
+                height:40
+                focus:True
+                multiline: False
+                password:True
+                pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+
+        Label:
+            id: sp
+            size_hint_y: None
+            height: 40
+        Button:
+            text: "Done"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            on_release:root.check()
+
+
+        Label:
+            id: sp2
+        Label:
+            id :sp3
+        Label:
+            id :sp3
+        Label:
+            id :sp3
+        Button:
+            text :"Go back"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            on_release:root.changescreen2()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+<MainMenu>:
+    id: roll
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .5, .5, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "MAIN MENU"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: roll.space_x, 10
+        #spacing: 20
+        Button:
+            text :"Voice Assistant Teacher"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.learn()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Montor Progress"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.moni()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Assignment"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.assi()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Attandance"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.changeattandance()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"LOGOUT"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.change()
+<Attandance>:
+    id: roll
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .5, .5, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "ATTANDANCE WINDOW"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: roll.space_x, 10
+        #spacing: 20
+        Button:
+            text :"Mark Attandance"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.ma()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"View Attandance"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Send EMail to defaulters"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Go Back"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.back()
+<Assignment>:
+    id: roll
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .5, .5, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "ASSIGNMENT WINDOW"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: roll.space_x, 10
+        #spacing: 20
+        Button:
+            text :"View Assignment"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.a()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Store Evaluated Assignment scores"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.sm()
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Go Back"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.back()
+<Monitor>:
+    id: roll
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .5, .5, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "MONTOR STUDENTS RESULT WINDOW"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: roll.space_x, 10
+        #spacing: 20
+        Button:
+            text :"View Result Of Each Student"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"View collective Results"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Send EMail to defaulters"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+        Label:
+            id :sp4
+        Label:
+            id :sp5
+        Button:
+            text :"Go Back"
+            size_hint_y: None
+            height: 40
+            background_color: (.06, .45, .45, 1)
+            background_normal: ''
+            on_release:root.back()
+<storemarks>:
+    idd:idd
+    e1:e1
+    h1:h1
+    m1:m1
+    info:info
+    id : logged
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "SIGN IN"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: logged.space_x, 5
+        #spacing: 20
+        TextInput:
+            id: idd
+            hint_text: "ID-Number"
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: e1
+            hint_text: "English 1 Marks"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.9}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: h1
+            hint_text: "Hindi 1 Marks"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.7}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        TextInput:
+            id: m1
+            hint_text: "Maths 1 Marks"
+            pos_hint:{'center_x': 1.25, 'center_y': 0.5}
+            multiline: False
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:25
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+        Button:
+            text: "Continue"
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45, 1)
+            background_normal: ''
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            on_release:root.register()
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+        Button:
+            text: "GO BACK"
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45, 1)
+            background_normal: ''
+            on_release:root.changescreen()
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+        Label:
+            id: info
+            size_hint_y:None
+            height:50
+            pos_hint:{'center_x': 1.25, 'center_y': 1}
+
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+<Markattandance>:
+    sp2:sp2
+    id : logged
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            source:'work.jpeg'
+            size: root.width-400,root.height
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "MARK ATTANDANCE"
+            bold: True
+            size_hint_x: .9
+    BoxLayout:
+        orientation: 'vertical'
+        padding: logged.space_x, 5
+        #spacing: 20
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+        Button:
+            text: "Capture Student"
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45, 1)
+            background_normal: ''
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            on_release:root.captures()
+        Label:
+            id: sp2
+            size_hint_y:None
+            height:50
+        Button:
+            text: "GO BACK"
+            size_hint_y: None
+            height: 40
+            background_color: (.06,.45,.45, 1)
+            background_normal: ''
+            pos_hint:{'center_x': 1.25, 'center_y': 0.3}
+            on_release:root.changes()
+<Learn>:
+    id: main_win
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'r1.jpg'
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (.06, .45, .45, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            text: "Choose Your Subject"
+            font : 20
+            bold: True
+            size_hint_x: 2
+
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'English'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.changescreene()
+<English>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'english.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding : 80
+        spacing: 5
+        Label:
+            text: "WELCOME"
+            color: 1,0.3,0.7,1
+            font_size: 45
+        Button:
+            size_hint:0.3,0.1
+            pos_hint:{'x':0.6,'y':0.8}
+            background_color: (0.06, .3, .4, .55)
+            text:'Chapter 1'
+            on_press:root.echap1()
+        Button:
+            pos_hint :{'x':0.6,'y':0.7}
+            size_hint:0.3,0.1
+            background_color: (0.06, .3, .4, .55)
+            text :'Chapter 2'
+            on_press:root.echap2()
+        Button:
+            pos_hint :{'x':0.6,'y':0.6}
+            size_hint:0.3,0.1
+            background_color: (0.06, .3, .4, .55)
+            text:'Chapter 3'
+        Button:
+            pos_hint :{'x':0.6,'y':0.5}
+            size_hint:0.3,0.1
+            text:'Go Back'
+            background_color: (0.06, .3, .4, .55)
+            on_press:root.changescreenf()
+<e1ch100>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'family.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+
+<e1ch101>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'father.jpg'
+            size: self.size
+            pos: self.pos
+
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch102>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'maa.jpeg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch103>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'sister.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch104>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'brother.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch105>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'grandm.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch106>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'grandf.jpeg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+
+<e1ch107>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'family.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'Home'
+            on_press: root.changescreen()
+
+<e1ch208>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'body.jfif'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'play'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'Back'
+            on_press: root.changescreen()
+
+<e1ch200>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'body.jfif'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+
+<e1ch201>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'head.jpg'
+            size: self.size
+            pos: self.pos
+
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch202>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'arm.png'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch203>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'leg.jpeg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch204>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'finger.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch205>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'stomach.jpg'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch206>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'back.jfif'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+<e1ch207>:
+    orientation: "vertical"
+    spacing: 50
+    space_x: self.size[0]/3
+    canvas.before:
+        Color:
+            rgba: (1,1,1, 1)
+        Rectangle:
+            source : 'neck.png'
+            size: self.size
+            pos: self.pos
+    FloatLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:30
+        Button:
+            size_hint:0.6,0.1
+            pos_hint :{'center_x':0.5,'center_y':0.3}
+            text:'PLAY'
+            bold:True
+            background_color: (0.06, .36, .4, .55)
+            on_release: root.play_sound()
+        Button:
+            size_hint : 0.6,0.1
+            bold:True
+            background_color: (0.06, .3, .4, .55)
+            pos_hint :{'center_x':0.5,'center_y':0.2}
+            text:'NEXT'
+            on_press: root.changescreen()
+
